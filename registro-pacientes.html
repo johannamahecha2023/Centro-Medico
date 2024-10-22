@@ -9,68 +9,75 @@
 <body>
     
     <!-- seccion fondo de animacion -->
-    <section>
-        <div class='air air1'></div>
-        <div class='air air2'></div>
-        <div class='air air3'></div>
-        <div class='air air4'></div>    
-
-        <form id="card">
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+        <form class="context">
 
             <h3>Registro de Paciente</h3>
             <br>
             <br>
             <section>                
-            <label>Nombres</label>
-            <input type="text">
+            <label for="Nombres">Nombres</label>
+            <input type="text" name="Nombres" id="Nombres" required>
             <br>
             <br>
-            <label>Apellidos</label>
-            <input type="text">
+            <label for="Apellidos">Apellidos</label>
+            <input type="text" name="Apellidos" id="Apellidos" required>
             <br>
             <br>
-            <label>Tipo de Documento</label>
+            <label for="Tipo de Documento">Tipo de Documento</label>
             <select name="Tipo de Documento">
-                <option value="1">Cedula de Ciudadania</option>
-                <option value="2">Cedula de Extranjera</option>
-                <option value="3">Tarjeta de identidad</option>
-                <option value="4">Contraseña</option>
+                <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                <option value="Cedula Extranjera">Cedula Extranjera</option>
+                <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                <option value="Contraseña">Contraseña</option>
             </select>
             <br>
             <br>
-            <label>Numero de Documento</label>
-            <input type="number" required>
+            <label for="Numero de Documento">Numero de Documento</label>
+            <input type="number" id="Numero de Documento">
             <br>
             <br>
-            <label>Edad</label>
-            <input type="number" required>
+            <label for="Edad">Edad</label>
+            <input type="number" id="Edad" name="Edad" required>
             <br>
             <br>
-            <label>Celular</label>
-            <input type="number" required>
+            <label for="Celular">Celular</label>
+            <input type="tel" name="Celular" id="Celular" required>
             <br>
             <br>
-            <label>Especialidad Requerida</label>
+            <label for="Especialidad">Especialidad Requerida</label>
             <select>
-                <option value="1">Odontologo</option>
-                <option value="1">Dermatolog</option>
-                <option value="1">Cardiologia</option>
-                <option value="1">Ginecologia</option>
-                <option value="1">Oftamologia</option>
-                <option value="1">Psicologia</option>
-                <option value="1">Nutricionista</option>
-                <option value="1">Urologo</option>
-                <option value="1">Psiquiatra</option>
-                <option value="1">Neurologo</option>
-                <option value="1">Pediatra</option>
-                <option value="1">Cirujano</option>
+                <option value="">Seleccione Especialidad</option>
+                <option value="Odontologo">Odontologo</option>
+                <option value="Dermatologo">Dermatologo</option>
+                <option value="Cardiologia">Cardiologia</option>
+                <option value="Ginecologia">Ginecologia</option>
+                <option value="Oftamologia">Oftamologia</option>
+                <option value="Psicologia">Psicologia</option>
+                <option value="Nutricionista">Nutricionista</option>
+                <option value="Urologo">Urologo</option>
+                <option value="Psiquiatra">Psiquiatra</option>
+                <option value="Neurologo">Neurologo</option>
+                <option value="Pediatra">Pediatra</option>
+                <option value="Cirujano">Cirujano</option>
             </select>
-
+            <br>
+            <br>
+            <input type="submit" value="Guardar" id="Guardar">
+            <a href="index.html">Volver</a>
             </section>
-    
         </form>
-      </section>
-
-    
 </body>
 </html>
