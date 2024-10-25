@@ -23,22 +23,22 @@
                 <li></li>
         </ul>
    
-        <form class="context">
+        <form class="context" id="Registro-Medicos-Form">
 
             <h3>Registro de Medico</h3>
             <br>
             <br>
         <section>                
-            <label for="Nombre">Nombres</label>
-            <input type="text" id="Nombre" name="Nombre" required>
+            <label for="Nombres">Nombres</label>
+            <input type="text" id="Nombres" name="Nombres" required>
             <br>
             <br>
             <label for="Apellidos">Apellidos</label>
             <input type="text" id="Apellidos" name="Apellidos" required>
             <br>
             <br>
-            <label>Tipo de Documento</label>
-            <select name="Tipo de Documento" required>
+            <label for="Tipo de Documento">Tipo de Documento</label>
+            <select type="option" name="Tipo de Documento" id="TipoDocumento" required>
                 <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                 <option value="Cedula Extranjera">Cedula Extranjera</option>
                 <option value="Tarjeta de identidad">Tarjeta de identidad</option>
@@ -47,7 +47,7 @@
             <br>
             <br>
             <label for="Numero de Documento">Numero de Documento</label>
-            <input type="number" name="Numero de Documento" id="Numero de Documento" required>
+            <input type="number" name="Numero de Documento" id="NumeroDocumento" required>
             <br>
             <br>
             <label for="Numero de Consultorio">Numero de Consultorio</label>
@@ -63,7 +63,7 @@
             <br>
             <br>
             <label for="Especialidad">Especialidad</label>
-            <select name="Especialidad" id="Especialidad" name="Especialidad" required>
+            <select name="Especialidad" id="Especialidad"  required>
                 <option value="">Seleccione una Especialidad Requerida</option>
                 <option value="Odontologo">Odontologo</option>
                 <option value="Dermatologo">Dermatologo</option>
@@ -84,6 +84,6 @@
             <a href="index.html">Volver</a>
         </section>
         </form>
-  
+    <script src="app.js"></script>
 </body>
 </html>
