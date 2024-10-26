@@ -76,7 +76,7 @@ const mostrarMedicos = function () {
   });
 };
 if (window.location.href.endsWith("listado_medicos.html")) {
-    mostrarMedicos();
+  mostrarMedicos();
 }
 if (window.location.href.endsWith("registro-medicos.html")) {
   //el evento de formulario medico va ser de tipo submit
@@ -92,7 +92,7 @@ if (window.location.href.endsWith("registro-medicos.html")) {
     let valorConsultorio = Consultorio.value;
     let valorCorreo = Correo.value;
 
-    // instancio
+    // instancio objeto medicos
     const Medicos = new Registro(
       valorNombres,
       valorApellidos,
@@ -120,6 +120,81 @@ if (window.location.href.endsWith("registro-medicos.html")) {
       llamamos medicos arriba en el getItem y luego el json que queremos
       mandar (medicos que es el nombre del arreglo)*/
     localStorage.setItem("medicos", JSON.stringify(medicos));
-    alert(`medico registrado exitosamente`);
+    alert(`Medico Registrado Exitosamente`);
+  });
+}
+// funcion para mostrar en listado pacientes, los pacientes registrados
+const mostrarPacientes = function () {
+  let pacientes = [];
+  let cuerpoTabla = document.getElementById("Cuerpo-Lista-Pacientes");
+  //guardo en el localstorage el nombre que le voy a asignar como llave
+  localPacientes = localStorage.getItem("pacientes");
+  if (localPacientes) {
+    pacientes = JSON.parse(localPacientes);
+  }
+
+  pacientes.forEach((paciente) => {
+    let fila = document.createElement("tr");
+    let celdaNombres = fila.insertCell();
+    let celdaApellidos = fila.insertCell();
+    let celdaTipoDocumento = fila.insertCell();
+    let celdaNumeroDocumento = fila.insertCell();
+    let celdaEdad = fila.insertCell();
+    let celdaCelular = fila.insertCell();
+    let celdaEspecialidad = fila.insertCell();
+    let celdaMedico = fila.insertCell();
+
+    celdaNombres.textContent = paciente.Nombres;
+    celdaApellidos.textContent = paciente.Apellidos;
+    celdaTipoDocumento.textContent = paciente.TipoDocumento;
+    celdaNumeroDocumento.textContent = paciente.NumeroDocumento;
+    celdaEdad.textContent = paciente.Edad;
+    celdaCelular.textContent = paciente.Celular;
+    celdaEspecialidad.textContent = paciente.Especialidad;
+    celdaMedico.textContent="por definir"
+
+    cuerpoTabla.appendChild(fila);
+  });
+};
+
+if (window.location.href.endsWith("listado_pacientes.html")) {
+     mostrarPacientes()
+}
+if (window.location.href.endsWith("registro-pacientes.html")) {
+  FormularioPacientes.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let valorNombres = Nombres.value;
+    let valorApellidos = Apellidos.value;
+    let valorTipoDocumento = TipoDocumento.value;
+    let valorNumeroDocumento = NumeroDocumento.value;
+    let valorEdad= Edad.value;
+    let valorCelular = Celular.value;
+    let valorEspecialidad = Especialidad.value;
+
+    // instancio objeto pacientes
+    const Pacientes = new Registro(
+      valorNombres,
+      valorApellidos,
+      valorTipoDocumento,
+      valorNumeroDocumento,
+      valorEdad,
+      valorCelular,
+      valorEspecialidad
+    );
+    Pacientes.Edad = valorEdad;
+    let pacientes = [];
+
+    //le doy una asignacion a la llave en el localstorage
+    localPacientes = localStorage.getItem("pacientes");
+    if (localPacientes) {
+      //lo pasamos el formato que esta en un arreglo a objeto
+      pacientes = JSON.parse(localPacientes);
+    }
+
+    pacientes.push(Pacientes);
+
+    //luego lo pasamos de nuevo a json y guardelo en el localstorage
+    localStorage.setItem("pacientes", JSON.stringify(pacientes));
+    alert("Paciente registrado Exitosamente");
   });
 }
